@@ -1,0 +1,30 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Device</th>
+          <th scope="col">Iso7250</th>
+          <th scope="col">Tailoring</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hbdf of hbdfs">
+          <td>{{ hbdf.id }}</td>
+          <td>{{ hbdf.name }}</td>
+          <td>{{ hbdf.age }}</td>
+          <td>{{ hbdf.height }}</td>
+          <td>{{ hbdf.weight }}</td>
+          <td>{{ hbdf.typeOfDevice }}</td>
+          <td>{{ hbdf.iso_7250 }}</td>
+          <td>{{ hbdf.tailoring }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
