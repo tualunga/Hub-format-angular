@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-konversion',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KonversionComponent implements OnInit {
 
-  constructor() { }
+  id2 = new FormControl();
 
-  ngOnInit() {
+  constructor(private httpService: HttpClient)
+  { }
+
+  ngOnInit()
+  { }
+
+  convertToCoo() {
+    //this.httpService.get("http://localhost:8080/export/HBDF_matrix.xls?id=" + this.id.value);
+    window.open("http://localhost:8080/export/HBDF_coo.xls?id=" + this.id2.value, '_self');
   }
+
+  convertToMatrix() {
+    //this.httpService.get("http://localhost:8080/export/HBDF_matrix.xls?id=" + this.id.value);
+    window.open("http://localhost:8080/export/HBDF_matrix.xls?id=" + this.id2.value, '_self');
+  }
+
+
+
 
 }

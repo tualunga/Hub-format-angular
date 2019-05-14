@@ -1,14 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-1">
-        <div class="card-body">
-          <h3 class="card-title text-center text-black py-3"> Vyhľadávanie</h3>
-          <ul class="text-center list-inline py-3">
-            <li class="list-inline-item"><a routerLink="/archive/hbdfs" class="btn btn-info">Vyhľadaj HBDF</a></li>
+<h3 class="card-title text-black"> Vyhľadávanie HBDF formátov v DB</h3>
+<ul class="list-inline py-1">
+  <div style='float: left;'>
+      <input type="text" style="margin:5px;width:300px; height:50px;" class="form-control" [formControl]="id2">
+  </div>
+<button class="btn btn-info" style="margin:5px;width:300px; height:50px;" routerLink="/archive/hbdfs"
+  >Vyhľadaj</button>
+</ul>
+<router-outlet></router-outlet>
 
-          </ul>
-        </div>
-      <router-outlet></router-outlet>
-    </div>
+<div class="card my-1">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+          <th scope="col">Device</th>
+          <th scope="col">Iso7250</th>
+          <th scope="col">Tailoring</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hbdf of hbdfs">
+          <td>{{ hbdf.id }}</td>
+          <td>{{ hbdf.name }}</td>
+          <td>{{ hbdf.age }}</td>
+          <td>{{ hbdf.height }}</td>
+          <td>{{ hbdf.weight }}</td>
+          <td>{{ hbdf.typeOfDevice }}</td>
+          <td>{{ hbdf.iso_7250 }}</td>
+          <td>{{ hbdf.tailoring }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

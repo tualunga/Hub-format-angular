@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormControl } from '@angular/forms';
 
-declare function draw(): any;
+declare function draw(data): any;
 
 @Component({
   selector: 'app-visualisation',
@@ -9,10 +11,21 @@ declare function draw(): any;
 })
 export class VisualisationComponent implements OnInit {
 
-  constructor() { }
+  id = new FormControl();
+
+  constructor(private httpService: HttpClient) { }
 
   ngOnInit() {
-    draw();
   }
+
+  vizualizuj() {
+    this.httpService.get("https://hubformat.herokuapp.com/calculate/id?id=" + this.id.value).subscribe(
+      data => {
+        draw(data);
+      }
+
+    );
+  }
+
 
 }

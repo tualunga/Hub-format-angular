@@ -3,8 +3,8 @@ var skeleton; // Storing the skeleton data
 var positions; // Storing the joint positions
 var positions_scaled; // Storing the scaled joint positions
 var figureScale = 2; // The scaling factor for our visualizations
-var h = 800; // The height of the visualization
-var w = 500; // The width of the visualization
+var h = 420; // The height of the visualization
+var w = 350; // The width of the visualization
 var gap = 10;
 var skip = 4;
 
@@ -21,8 +21,8 @@ function draw() {
   positions_scaled = positions.map(function(f, j) {
     return f.map(function(d, i) {
       return {
-        x: d.x+200,
-        y: -1 * d.y + 210,
+        x: d.x*2+150,
+        y: -1 * d.y  *2 + 400,
         z: d.z ,
       };
     });
@@ -44,9 +44,9 @@ function draw() {
       return d.y;
     }).attr("r", function(d, i) {
       if (i == headJoint)
-        return 4;
+        return 10;
       else
-        return 2;
+        return 4;
     }).attr("fill", function(d, i) {
       return '#555555';
     });
