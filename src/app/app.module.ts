@@ -9,8 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoadComponent } from './load/load.component';
 import { VisualisationComponent } from './visualisation/visualisation.component';
 import { KonversionComponent } from './konversion/konversion.component';
-import { ArchiveComponent } from './archive/archive.component';
-import { HbdfListComponent } from './archive/hbdf-list/hbdf-list.component';
+import { HbdfListComponent } from './hbdf-list/hbdf-list.component';
 import { HbdfServiceService } from 'src/app/service/hbdf-service.service';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { HbdfServiceService } from 'src/app/service/hbdf-service.service';
     LoadComponent,
     VisualisationComponent,
     KonversionComponent,
-    ArchiveComponent,
     HbdfListComponent
   ],
   imports: [

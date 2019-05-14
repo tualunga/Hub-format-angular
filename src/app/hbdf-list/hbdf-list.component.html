@@ -1,9 +1,9 @@
 <h3 class="card-title text-black"> Vyhľadávanie HBDF formátov v DB</h3>
 <ul class="list-inline py-1">
   <div style='float: left;'>
-      <input type="text" style="margin:5px;width:300px; height:50px;" class="form-control" [formControl]="id2">
+      <input placeholder="meno" type="text" style="margin:5px;width:300px; height:50px;" class="form-control" [formControl]="id6">
   </div>
-<button class="btn btn-info" style="margin:5px;width:300px; height:50px;">Vyhľadaj</button>
+<button class="btn btn-info" style="margin:5px;width:300px; height:50px;" (click)="find()">Vyhľadaj</button>
 </ul>
 <router-outlet></router-outlet>
 

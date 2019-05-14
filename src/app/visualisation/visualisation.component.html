@@ -1,9 +1,41 @@
+
 <div>
   <h3 class="card-title text-black "> Vizualizovanie skeletu osoby</h3>
 </div>
+
 <div style='float: left;'>
-    <input type="text" style="margin:5px;width:300px; height:50px;" class="form-control" [formControl]="id">
-    <button class="btn btn-info" style="margin:5px;width:300px; height:50px;" (click)="vizualizuj()">Vizualizuj HBDF</button>
+    <input placeholder="id" type="text" style="margin:5px;width:300px; height:50px;" class="form-control" [formControl]="id">
+    <button class="btn btn-info" style="margin:5px;width:300px; height:50px;" (click)="vizualizuj(); getInfo()">Vizualizuj HBDF</button>
+    <table class="table table-hover table-striped table-borderless">
+    <!--Table head-->
+      <tbody>
+        <tr>
+          <td><strong>ID:</strong></td>
+          <td>{{infos.id}}</td>
+        </tr>
+        <tr>
+           <td><strong>Meno:</strong></td>
+          <td>{{infos.name}}</td>
+        </tr>
+        <tr>
+           <td><strong>Vek:</strong></td>
+          <td>{{infos.age}}</td>
+        </tr>
+        <tr>
+           <td><strong>Výška(cm):</strong></td>
+          <td>{{infos.height}}</td>
+        </tr>
+        <tr>
+           <td><strong>Hmot.(kg):</strong></td>
+          <td>{{infos.weight}}</td>
+        </tr>
+        <tr>
+           <td><strong>Zariadenie:</strong></td>
+          <td>{{infos.type}}</td>
+        </tr>
+      </tbody>
+    </table>
+
 </div>
 <div id="container" style="margin:5px;height:370;width:300px;border:1px solid #ddd;float: left;">
 </div>

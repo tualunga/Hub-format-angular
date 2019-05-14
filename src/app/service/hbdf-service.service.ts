@@ -11,19 +11,18 @@ export class HbdfServiceService {
 
   private hbdfsUrl: string;
   private hbdfsUrlToName: string;
-  id3 = new FormControl();
 
   constructor(private http: HttpClient) {
     this.hbdfsUrl = 'http://localhost:8080/archive/get';
-    this.hbdfsUrlToName
+    this.hbdfsUrlToName = 'http://localhost:8080/archive//by?name=';
 
   }
 
-  public findAll(): Observable<Hbdf[]> {
+  public findAll(name: string): Observable<Hbdf[]> {
     if(name == null){
       return this.http.get<Hbdf[]>(this.hbdfsUrl);
     } else {
-      return this.http.get<Hbdf[]>(this.hbdfsUrl);
+      return this.http.get<Hbdf[]>(this.hbdfsUrlToName + name);
     }
 
 
